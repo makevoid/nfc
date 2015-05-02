@@ -43,6 +43,10 @@ First install libnfc[http://libnfc.org/].
 I installed libnfc via homebrew:
 
   $ brew install libnfc
+  
+You can install via apt if you're on debian/ubuntu:
+
+  $ apt-get install libnfc-dev
 
 The install the gem:
 
