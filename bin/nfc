@@ -1,11 +1,14 @@
 #!/usr/bin/env ruby
 
-require 'rubygems'
 require 'nfc'
-nfc = NFC.instance
 
-puts "Connected to NFC reader: #{nfc.device.name}"
-puts
-nfc.find do |tag|
-  p tag
+# Create a new context
+ctx = NFC::Context.new
+
+# Open the first available USB device
+dev = ctx.open nil
+
+loop do
+  p dev.select.inspect
+  sleep 5
 end
