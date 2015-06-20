@@ -27,6 +27,16 @@ module NFC
     ###
     # Inspect this tag
     def inspect
+      log_info
+
+      # TODO: inspect contents
+
+      to_s
+    end
+
+    private
+
+    def log_info
       string_ary =
         [ "(NFC) ISO14443A Tag",
           " ATQA (SENS_RES): #{sprintf("%02x  %02x", *atqa)}",
@@ -37,7 +47,10 @@ module NFC
         ats = sprintf((['%02x'] * szAtsLen).join('  '), *self.ats)
         string_ary << "       ATS (ATR): #{ats}"
       end
-      string_ary.join "\n"
+      data = string_ary.join "\n"
+      puts
+      puts data
+      puts
     end
   end
 end

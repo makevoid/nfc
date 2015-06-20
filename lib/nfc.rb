@@ -1,8 +1,8 @@
 require 'thread'
 require 'nfc/nfc'
-require 'nfc/device'
-require 'nfc/iso14443a'
-require 'nfc/felica'
+require_relative './nfc/device'
+require_relative './nfc/iso14443a'
+require_relative './nfc/felica'
 
 ###
 # NFC is a class for dealing with Near Field Communication systems.  This
